@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simplified Movies API ref</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img
+          src="./assets/fes-logo.png"
+          alt="Simplified Flix logo"
+          class="logo__img"
+          width="50px"
+        />
+        <div class="logo__title"><span>Simplified</span> Flix</div>
+      </div>
+      <form class="search-form" id="searchForm">
+        <div class="search-form__group">
+          <input
+            class="search-form__input"
+            type="text"
+            id="searchInput"
+            placeholder="Search movies..."
+            required
+          />
+          <!-- no need for button with an onClick because it's part of a form with a type="submit" below  -->
+          <button class="search-form__button" type="submit" aria-label="Search">
+            <svg
+              class="search-form__icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="7"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </nav>
+
+    <main>
+      <div class="controls">
+        <p id="resultsInfo" class="resultsInfo"></p>
+        <div class="controls__filters">
+          <label for="typeSelect">Filter:</label>
+          <select id="typeSelect">
+            <option value="all">All</option>
+            <option value="movie">Movies</option>
+            <option value="series">Series</option>
+            <option value="episode">Episodes</option>
+            <option value="game">Games</option>
+          </select>
+          <label for="sortSelect">Sort:</label>
+          <select id="sortSelect">
+            <option value="default">Default</option>
+            <option value="a-z">A - Z</option>
+            <option value="z-a">Z - A</option>
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="movies-grid" id="moviesGrid">
+        <!-- results are rendered here by index.js -->
+      </div>
+    </main>
+
+    <footer>
+      <p>Created by Simplified.org. Powered by OMDBapi.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
